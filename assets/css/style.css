@@ -1,0 +1,341 @@
+/* FONTS */
+@import url(../css/clash-display.css);
+
+/* VARIABLES */
+:root {
+  --darkColor: #212529;
+  --whiteColor: #ffffff;
+  --brandColor: #ff8c00;
+  --brandLightColor: #ffa07a;
+  --brandColorRgb: 255, 140, 0;
+  --bodyColor: #727272;
+  --baseFont: "ClashDisplay", sans-serif;
+  --boxShadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
+  --transition: all 0.5s ease;
+}
+
+/* RESET & HELPERS */
+body {
+  font-family: var(--baseFont);
+  line-height: 1.7;
+  color: var(--bodyColor);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-weight: 600;
+  color: var(--darkColor);
+}
+
+a {
+  text-decoration: none;
+  color: var(--brandColor);
+  transition: var(--transition);
+}
+a:hover {
+  color: var(--brandLightColor);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.section-padding {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.theme-shadow {
+  box-shadow: var(--boxShadow);
+}
+
+/* IMAGE ZOOM */
+.image-zoom {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-zoom-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.image-zoom-wrapper img {
+  transition: var(--transition);
+}
+
+.image-zoom:hover .image-zoom-wrapper img {
+  transform: scale(1.1);
+}
+
+/* NAVBAR */
+.navbar {
+  box-shadow: var(--boxShadow);
+}
+.navbar .nav-link {
+  font-weight: 500;
+  color: var(--darkColor);
+}
+
+.navbar .nav-link.active {
+  color: var(--brandColor);
+}
+
+/* BUTTON */
+.btn {
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 10px 24px;
+}
+
+.btn-brand {
+  background-color: var(--brandColor);
+  color: var(--whiteColor);
+  border-color: var(--brandColor);
+}
+
+.btn-brand:hover {
+  background-color: var(--brandLightColor);
+  color: var(--whiteColor);
+  border-color: var(--brandLightColor);
+}
+
+/* HERO SECTION */
+#hero {
+  background: linear-gradient(
+      rgba(var(--brandColorRgb), 0.507),
+      rgba(var(--brandColorRgb), 0.438)
+    ),
+    url(../images/hero-1.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* ABOUT SECTION */
+.section-title {
+  margin-bottom: 60px;
+}
+
+.section-title .line {
+  width: 60px;
+  height: 4px;
+  background-color: var(--brandColor);
+  margin: 16px auto 24px auto;
+  border-radius: 10px;
+}
+
+-title p {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.icon-box {
+  width: 70px;
+  height: 70px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(var(--brandColorRgb), 0.1);
+  color: var(--brandColor);
+  padding: 15px;
+  flex: none;
+  border-radius: 10px;
+}
+
+/* SERVICES SECTION */
+.service {
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.service::after {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background-color: rgba(var(--brandColorRgb), 0.2);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transition: var(--transition);
+}
+
+.service:hover::after {
+  width: 100%;
+  height: 100%;
+  background-color: var(--brandColor);
+  z-index: -1;
+}
+
+.service:hover h5,
+.service:hover p {
+  color: var(--whiteColor);
+}
+
+.service:hover .icon-box {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+/* COUNTER SECTION */
+#counter {
+  background: linear-gradient(
+      rgba(var(--brandColorRgb), 0.8),
+      rgba(var(--brandColorRgb), 0.8)
+    ),
+    url(../images/counter.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* PORTFOLIO SECTION */
+.portfolio-item .icon-box {
+  background-color: var(--brandColor);
+  color: var(--whiteColor);
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.portfolio-item:hover .icon-box {
+  top: 50%;
+  opacity: 1;
+}
+
+/* REVIEWS SECTION */
+#reviews svg {
+  width: 16px;
+  height: 16px;
+}
+
+.review-head {
+  position: relative;
+}
+.review-head::after {
+  content: "";
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  bottom: -14px;
+  background-color: var(--whiteColor);
+  transform: rotate(45deg);
+}
+
+.review small {
+  font-weight: 600;
+  color: var(--brandLightColor);
+}
+
+/* TEAM SECTION */
+.team-member-content {
+  background-color: var(--brandColor);
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  width: calc(100% - 50px);
+  transform: translateX(-50%);
+  padding: 24px;
+  border-radius: 10px;
+  transition: var(--transition);
+  opacity: 0;
+}
+
+.team-member:hover .team-member-content {
+  opacity: 1;
+  bottom: 24px;
+}
+
+/* CONTACT SECTION */
+#contact {
+  position: relative;
+  z-index: 2;
+}
+
+#contact::after {
+  content: "";
+  width: 100%;
+  height: 70%;
+  background: linear-gradient(
+      rgba(var(--brandColorRgb), 0.8),
+      rgba(var(--brandColorRgb), 0.8)
+    ),
+    url(../images/counter.jpg);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#contact .form-control:focus {
+  box-shadow: none;
+  border-color: var(--brandColor);
+}
+
+/* FOOTER SECTION */
+footer {
+  padding-top: 120px;
+}
+
+.footer-top {
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+footer li,
+footer p,
+footer a,
+footer svg {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer .line {
+  width: 40px;
+  height: 4px;
+  background-color: var(--brandColor);
+  margin: 12px 0 24px 0;
+}
+
+footer svg {
+  width: 20px;
+  height: 20px;
+}
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.social-icons a:hover {
+  background-color: var(--brandColor);
+  color: var(--whiteColor);
+}
